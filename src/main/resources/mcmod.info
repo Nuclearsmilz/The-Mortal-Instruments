@@ -1,0 +1,16 @@
+[
+{
+  "modid": "tmi",
+  "name": "The Mortal Instruments",
+  "description": "The Unofficial Official "The Shadowhunter's" Mod for Minecraft",
+  "version": "$(version)",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/Nuclearsmilz/The-Mortal-Instruments",
+  "updateUrl": "",
+  "authorList": ["Nuke"],
+  "credits": "Forge",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

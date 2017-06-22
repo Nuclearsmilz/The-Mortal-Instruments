@@ -1,0 +1,33 @@
+language: java
+
+sudo: false
+
+jdk:
+- oraclejdk8
+
+before_install:
+- chmod +x ./gradlew
+
+install: "./gradlew setupCIWorkspace"
+
+script: 
+- ./gradlew build
+
+before_cache:
+- rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  
+deploy:
+  provider: releases
+  file_glob: true
+  api_key: $GITHUB_OAUTH
+  file: 
+  - "./build/libs/The-Mortal-Instruments-*-*.jar"
+  - "./build/libs/The-Mortal-Instruments-*-*-sources.jar"
+  skip_cleanup: true
+  on:
+    tags: true
