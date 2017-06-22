@@ -20,8 +20,6 @@ public class TheMortalInstruments {
 
 	@SidedProxy(clientSide = References.CLIENT_PROXY_CLASS)
 	public static CommonProxy proxy;
-	
-	private static boolean isDev = (Boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment");
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
@@ -51,7 +49,7 @@ public class TheMortalInstruments {
 			return new ItemStack(Items.GOLDEN_APPLE); // TODO: Replace with Stele
 		}
 	};
-	
+
 	public static String prependModID(String name) {
 		return References.MODID + ":" + name;
 	}
